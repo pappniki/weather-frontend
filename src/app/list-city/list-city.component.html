@@ -1,0 +1,13 @@
+<div>
+  <table>
+    <tr>
+      <th>City:</th>
+      <th>Population:</th>
+    </tr>
+
+    <tr *ngFor="let city of cityList">
+      <td (click)="chooseCity(city.city)">{{city.city}}</td>
+      <td>{{city.population}}</td>
+    </tr>
+  </table>
+</div>
