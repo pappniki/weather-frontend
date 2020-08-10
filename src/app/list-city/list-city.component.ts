@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {LoggerService} from "../../service/loggerService";
 
 @Component({
   selector: 'app-list-city',
@@ -10,7 +11,9 @@ export class ListCityComponent implements OnInit {
   @Input() cityList = [];
   @Output() chosenCity = new EventEmitter<string>();
 
-  constructor() {
+  constructor(private myLogger: LoggerService) {
+
+
   }
 
   ngOnInit(): void {
@@ -18,5 +21,6 @@ export class ListCityComponent implements OnInit {
 
   chooseCity(city: string) {
     this.chosenCity.emit(city);
+    this.myLogger.message.next(city);
   }
 }

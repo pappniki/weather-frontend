@@ -1,6 +1,9 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
 <div id="container">
   <h3>Hello Weather!</h3>
   <p>Chosen city: {{chosenCity}}</p>
+  <p>Get city from service {{message}}</p>
   <app-list-city (chosenCity)="chooseCity($event)" [cityList]="cityList"></app-list-city>
 
 </div>

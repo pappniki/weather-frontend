@@ -1,0 +1,31 @@
+<div id="container">
+
+  <form (ngSubmit)="submit()" [formGroup]="catForm">
+    <div>
+      <label for="name">Name: </label>
+      <input formControlName="name" id="name">
+
+    </div>
+
+    <div>
+      <label for="age">Age: </label>
+      <input formControlName="age" id="age" type="number">
+
+    </div>
+
+    <div>
+      <label for="sex">Sex:</label>
+      <input formControlName="sex" id="sex">
+    </div>
+
+    <div *ngFor="let genre of genreType; let i = index" formArrayName="genres">
+      <label>
+        <input [formControlName]="i" type="checkbox">{{genre.displayName}}
+      </label>
+    </div>
+
+
+    <button>Submit</button>
+  </form>
+  <button (click)="patchValue()">Patch Value</button>
+</div>
